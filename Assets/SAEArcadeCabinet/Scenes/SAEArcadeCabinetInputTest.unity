@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -266,6 +267,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -375,6 +377,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -484,6 +487,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -593,6 +597,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -695,11 +700,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4194910426442101125, guid: 5f1b5d48f5c0b774bbc4f69e0265b755,
-        type: 3}
-      propertyPath: m_Name
-      value: SAEArcadeInput
-      objectReference: {fileID: 0}
     - target: {fileID: 4194910426442101123, guid: 5f1b5d48f5c0b774bbc4f69e0265b755,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -758,7 +758,22 @@ PrefabInstance:
     - target: {fileID: 4194910426442101124, guid: 5f1b5d48f5c0b774bbc4f69e0265b755,
         type: 3}
       propertyPath: useEvents
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194910426442101124, guid: 5f1b5d48f5c0b774bbc4f69e0265b755,
+        type: 3}
+      propertyPath: dontConfigureInEditor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194910426442101124, guid: 5f1b5d48f5c0b774bbc4f69e0265b755,
+        type: 3}
+      propertyPath: PlayerCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194910426442101125, guid: 5f1b5d48f5c0b774bbc4f69e0265b755,
+        type: 3}
+      propertyPath: m_Name
+      value: SAEArcadeInput
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f1b5d48f5c0b774bbc4f69e0265b755, type: 3}
