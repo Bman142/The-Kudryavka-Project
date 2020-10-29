@@ -137,7 +137,7 @@ namespace SAE
         private void Start()
         {
             // Manually create 4 players.
-            this.playerInputs = new PlayerInput[ PlayerCount ];
+            this.playerInputs = new PlayerInput[ 4 ];
             for( int i = 0; i < this.playerInputs.Length; i++ ) { this.playerInputs[ i ] = new PlayerInput(); }
 
             // Configure players (Note: You can comment this out if you want to call SAE.ArcadeMachine.instance.ConfigurePlayers() from your own script to start configuration)
