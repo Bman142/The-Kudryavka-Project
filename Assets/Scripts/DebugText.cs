@@ -15,6 +15,11 @@ public class DebugText : MonoBehaviour
         
     }
 
+    public void DebugLog(string log)
+    {
+        Debug.Log(log);
+    }
+
     // Update is called once per frame
     void Update()
     {

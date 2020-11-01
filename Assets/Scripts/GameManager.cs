@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     int redScore;
 
     private int activeSection = 0;
+
     // Start is called before the first frame update
     void Start()
     {
