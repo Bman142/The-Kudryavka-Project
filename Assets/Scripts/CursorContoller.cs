@@ -25,17 +25,17 @@ public class CursorContoller : MonoBehaviour
     // Start is called before the first frame update
 
 
-    void Start()
+    void Awake()
     {
-        Debug.Log(playerCount);
+        countManager = GameObject.Find("PlayerCountManager").GetComponent<PlayerCountManager>();
         SetPlayerNumbers();
-        Debug.Log(playerCount);
+        
         
     }
 
     void SetPlayerNumbers()
     {
-        playerCount = countManager.gameObject.GetComponent<PlayerCountManager>().GetPlayerCount();
+        playerCount = countManager.GetPlayerCount();
         switch (playerCount)
         {
             case 1:
@@ -72,7 +72,6 @@ public class CursorContoller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(countManager.GetPlayerCount());
         Vector2 axisValues = ArcadeMachine.PlayerJoystickAxisStatic(ArcadeMachine.PlayerColorId.YELLOW_PLAYER);
         this.yellowPlayer.position += new Vector3(axisValues.x, -axisValues.y, 0f) * this.moveSpeed;
 
