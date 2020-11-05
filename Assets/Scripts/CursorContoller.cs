@@ -15,8 +15,8 @@ public class CursorContoller : MonoBehaviour
     public int moveSpeed;
 
     [SerializeField] Vector2 wrapSize;
-    [SerializeField] PlayerCountManager countManager;
-    [SerializeField] int playerCount;
+    private PlayerCountManager countManager;
+    private int playerCount;
 
     [SerializeField] TextMeshProUGUI yellowScore;
     [SerializeField] TextMeshProUGUI blueScore;
