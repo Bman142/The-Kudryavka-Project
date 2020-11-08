@@ -10,17 +10,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] List<int> enemiesToKill;
     public int enemiesKilled;
 
-    int yellowScore;
-    int blueScore;
-    int greenScore;
-    int redScore;
+    int yellowScore = 5;
+    int blueScore = 15;
+    int greenScore = 9;
+    int redScore = 18;
 
     private int activeSection = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        DontDestroyOnLoad(this.gameObject);
     }
     public void UpdateScore(int score, SAE.ArcadeMachine.PlayerColorId player)
     {
@@ -72,6 +72,10 @@ public class GameManager : MonoBehaviour
         if (enemiesKilled >= enemiesToKill[activeSection])
         {
             setActiveCamera(activeSection + 1);
+        }
+        if (enemiesKilled>= enemiesToKill[4])
+        {
+            this.GetComponent<SceneLoader>().LoadScene(2);
         }
     }
 }
