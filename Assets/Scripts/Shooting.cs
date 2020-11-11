@@ -26,7 +26,7 @@ public class Shooting : MonoBehaviour
             {
                 if (hitInfo.collider.gameObject.tag == "Enemy") 
                 {
-                    hitInfo.collider.gameObject.GetComponent<EnemyController>().takeDamage(1, ArcadeMachine.PlayerColorId.YELLOW_PLAYER);
+                    hitInfo.collider.gameObject.GetComponent<EnemyController>().TakeDamage(1, ArcadeMachine.PlayerColorId.YELLOW_PLAYER);
                 }
                 
             }
@@ -45,7 +45,7 @@ public class Shooting : MonoBehaviour
             {
                 if (hitInfo.collider.gameObject.tag == "Enemy")
                 {
-                    hitInfo.collider.gameObject.GetComponent<EnemyController>().takeDamage(1, ArcadeMachine.PlayerColorId.BLUE_PLAYER);
+                    hitInfo.collider.gameObject.GetComponent<EnemyController>().TakeDamage(1, ArcadeMachine.PlayerColorId.BLUE_PLAYER);
                 }
 
             }
@@ -58,7 +58,7 @@ public class Shooting : MonoBehaviour
             {
                 if (hitInfo.collider.gameObject.tag == "Enemy")
                 {
-                    hitInfo.collider.gameObject.GetComponent<EnemyController>().takeDamage(1, ArcadeMachine.PlayerColorId.RED_PLAYER);
+                    hitInfo.collider.gameObject.GetComponent<EnemyController>().TakeDamage(1, ArcadeMachine.PlayerColorId.RED_PLAYER);
                 }
 
             }
@@ -72,7 +72,7 @@ public class Shooting : MonoBehaviour
             {
                 if (hitInfo.collider.gameObject.tag == "Enemy")
                 {
-                    hitInfo.collider.gameObject.GetComponent<EnemyController>().takeDamage(1, ArcadeMachine.PlayerColorId.GREEN_PLAYER);
+                    hitInfo.collider.gameObject.GetComponent<EnemyController>().TakeDamage(1, ArcadeMachine.PlayerColorId.GREEN_PLAYER);
                 }
 
             }

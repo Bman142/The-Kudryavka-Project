@@ -92,6 +92,12 @@ public class CursorContoller : MonoBehaviour
         { moveSpeed -= 1; }
 
         //Check For Offscreen
+        float widthRel = 100 / (Screen.width); //relative width
+        float heightRel = 100 / (Screen.height); //relative height
 
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(this.transform.position);
+        viewPos.x = Mathf.Clamp(viewPos.x, widthRel, 1 - widthRel);
+        viewPos.y = Mathf.Clamp(viewPos.y, heightRel, 1 - heightRel);
+        this.transform.position = Camera.main.ViewportToWorldPoint(viewPos);
     }
 }

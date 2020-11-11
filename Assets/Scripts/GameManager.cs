@@ -5,15 +5,22 @@ using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Lists of Items")]
     [SerializeField] List<DollyCartControl> dollyCartControls;
     [SerializeField] List<CinemachineVirtualCamera> cameras;
     [SerializeField] List<int> enemiesToKill;
-    public int enemiesKilled;
+    [SerializeField] List<GameObject> enemies;
 
-    int yellowScore = 5;
-    int blueScore = 15;
-    int greenScore = 9;
-    int redScore = 18;
+
+    [Header("Internal Varibles for Testing")]
+    [SerializeField] int enemiesKilled;
+    bool endLoaded = false;
+    int yellowScore;
+    int blueScore;
+    int greenScore;
+    int redScore;
+
+    [SerializeField] float enemyMoveSpeed;
 
     private int activeSection = 0;
 
@@ -21,7 +28,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+        
     }
+
     public void UpdateScore(int score, SAE.ArcadeMachine.PlayerColorId player)
     {
         switch (player)
@@ -56,26 +65,48 @@ public class GameManager : MonoBehaviour
         }
         return 0;
     }
-    public void setActiveCamera(int cameraID)
+
+    public void SetActiveSection(int SectionID)
     {
         cameras[activeSection].m_Priority = 1;
-        activeSection = cameraID;
-        cameras[cameraID].m_Priority = 1000;
+        activeSection = SectionID;
+        cameras[SectionID].m_Priority = 1000;
+        enemies[SectionID].SetActive(true);
     }
 
+    public CinemachineVirtualCamera GetActiveCamera()
+    {
+        return cameras[activeSection];
+    }
+
+    public float GetEnemyMoveSpeed()
+    {
+        return enemyMoveSpeed;
+    }
+
+    public void SetEnemyKilled(int amountOfEnemiesKilled)
+    {
+        enemiesKilled += amountOfEnemiesKilled;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        dollyCartControls[activeSection].startCart.Invoke();
+        if (activeSection != 5) { dollyCartControls[activeSection].startCart.Invoke(); 
+
 
         if (enemiesKilled >= enemiesToKill[activeSection])
         {
-            setActiveCamera(activeSection + 1);
+            SetActiveSection(activeSection + 1);
         }
-        if (enemiesKilled>= enemiesToKill[4])
+        }
+        if (enemiesKilled>= enemiesToKill[enemiesToKill.Count - 1])
         {
-            this.GetComponent<SceneLoader>().LoadScene(2);
+            if (endLoaded == false)
+            {
+                this.GetComponent<SceneLoader>().LoadScene(2);
+                endLoaded = true;
+            }
         }
     }
 }
