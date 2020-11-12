@@ -30,6 +30,6 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         agent.speed = manager.GetEnemyMoveSpeed();
-        agent.SetDestination(manager.GetActiveCamera().transform.position);
+        agent.SetDestination(manager.GetActiveCamera().transform.position + manager.GetActiveCamera().transform.forward * 2);
     }
 }
