@@ -85,19 +85,9 @@ public class CursorContoller : MonoBehaviour
         this.greenPlayer.position += new Vector3(axisValues.x, -axisValues.y, 0f) * this.moveSpeed;
 
 
-        if (ArcadeMachine.PlayerPressingButtonStatic(ArcadeMachine.PlayerColorId.YELLOW_PLAYER, 2, true) == true)
-        { moveSpeed += 1; }
-
-        if (ArcadeMachine.PlayerPressingButtonStatic(ArcadeMachine.PlayerColorId.YELLOW_PLAYER, 3, true) == true)
-        { moveSpeed -= 1; }
+        
 
         //Check For Offscreen
-        float widthRel = 100 / (Screen.width); //relative width
-        float heightRel = 100 / (Screen.height); //relative height
-
-        Vector3 viewPos = Camera.main.WorldToViewportPoint(this.transform.position);
-        viewPos.x = Mathf.Clamp(viewPos.x, widthRel, 1 - widthRel);
-        viewPos.y = Mathf.Clamp(viewPos.y, heightRel, 1 - heightRel);
-        this.transform.position = Camera.main.ViewportToWorldPoint(viewPos);
+        
     }
 }
